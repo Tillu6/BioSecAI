@@ -17,9 +17,11 @@ export function KeystrokeCapture() {
     window.addEventListener('keyup', handler);
 
     const interval = setInterval(() => {
-      postBiometric('keystroke', { userId: 'user1', events });
-      events.length = 0;
-      setCount(0);
+      if (events.length) {
+        postBiometric('keystroke', { userId: 'user1', events });
+        events.length = 0;
+        setCount(0);
+      }
     }, 15000);
 
     return () => {
@@ -30,7 +32,12 @@ export function KeystrokeCapture() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center">
+    <div
+      role="region"
+      aria-label="Keystroke activity recording"
+      tabIndex={0}
+      className="flex flex-col items-center"
+    >
       <Cpu size={48} className="text-neon mb-2 animate-pulse" />
       <motion.div
         animate={{ scale: [1, 1.2, 1] }}

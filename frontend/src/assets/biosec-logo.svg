@@ -1,0 +1,23 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neon gradient background circle -->
+  <defs>
+    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FFE5"/>
+      <stop offset="100%" stop-color="#00B3FF"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="url(#grad)" filter="url(#glow)" />
+  <!-- Stylized B shield -->
+  <path d="M70,50 L130,50 C145,50 155,60 155,75 C155,90 145,100 130,100 L70,100 Z" fill="#141414"/>
+  <path d="M70,100 L130,100 C145,100 155,110 155,125 C155,140 145,150 130,150 L70,150 Z" fill="#141414"/>
+  <!-- Inner cutouts -->
+  <rect x="75" y="60" width="40" height="30" fill="#0d1117"/>
+  <rect x="75" y="110" width="40" height="30" fill="#0d1117"/>
+</svg>
