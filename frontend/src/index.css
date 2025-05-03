@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-midnight text-white font-sans;
+}
+
+/* utility for the neon glow text */
+.neon-glow {
+  text-shadow:
+    0 0 2px #39ff14,
+    0 0 8px #39ff14,
+    0 0 16px #39ff14;
+}
